@@ -1,0 +1,31 @@
+<h1>Post a New Tweet</h1>
+<%= form_for @tweet do |f| %>
+  <div>
+    <%= f.label :author, "Your Name" %>
+    <%= f.text_field :author %>
+  </div>
+  <div>
+
+    <%= f.label :body, "Your Message" %>
+    <%= f.text_field :body %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+<select id="state" name="state" style="width: 212px;" onclick='test()'>
+<option value="nsw">New South Wales</option>
+<option value="qld">Queensland</option>
+<option value="vic">Victoria</option>
+<option value="nt">Northern Territory</option>
+<option value="tas">Tasmania</option>
+<option value="sa">South Australia</option>
+<option value="wa">Western Australia</option>
+<option value="act">Australian Capital Territory</option>
+<option value="notinoz">Not in Australia</option>
+ </select>
+
+<select id="extra" name="extra" style="display: none">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>

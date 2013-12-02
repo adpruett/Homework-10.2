@@ -1,0 +1,19 @@
+<h1>Tweeter</h1>
+<%= link_to "Create Tweet", new_tweet_path %>
+<br>
+<%= form_tag root_path, method: :get do %>
+  <%= text_field_tag :query, @query, placeholder: 'Search' %>
+  <%= submit_tag "Search" %>
+<% end %>
+<br>
+
+<% @tweets.each do |tweet| %>
+  <div>
+    <%= truncate(highlight tweet.body, @query, length:80) %>
+    - <%= tweet.created_at %>
+    by <strong> <%= tweet.author %> </strong>
+    - <%= pluralize(tweet.body.length, 'character') %>
+    - <%= link_to "Show Full Tweet", tweet_path(tweet) %>
+  </div>
+<% end %>
+
